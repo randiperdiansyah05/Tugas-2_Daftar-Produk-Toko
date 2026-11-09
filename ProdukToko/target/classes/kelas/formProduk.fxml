@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kelas.controller.FormController" stylesheets="@styles/app.css">
+    <top>
+        <VBox spacing="6" styleClass="header">
+            <Label text="DAFTAR PRODUK TOKO" styleClass="title"/>
+            <Label text="Tambah Produk Baru" styleClass="subtitle"/>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" styleClass="page">
+            <content>
+                <VBox alignment="TOP_CENTER" styleClass="page">
+                    <VBox maxWidth="620" spacing="12" styleClass="card">
+                        <Label text="Formulir Produk" styleClass="subtitle"/>
+                        <Label text="Kode Produk (otomatis)" styleClass="field-label"/>
+                        <TextField fx:id="kodeField" editable="false"/>
+                        <Label text="Nama Produk" styleClass="field-label"/>
+                        <TextField fx:id="namaField" promptText="Masukkan nama produk"/>
+                        <Label text="Kategori" styleClass="field-label"/>
+                        <ComboBox fx:id="kategoriBox" maxWidth="Infinity"/>
+                        <Label text="Harga Produk (Rp)" styleClass="field-label"/>
+                        <TextField fx:id="hargaField" promptText="Contoh: 5000"/>
+                        <Label text="Gambar Produk (Opsional)" styleClass="field-label"/>
+                        <HBox spacing="10" alignment="CENTER_LEFT">
+                            <Button text="Pilih Gambar..." onAction="#pilihGambar"/>
+                            <Label fx:id="namaFileLabel" text="Belum ada gambar dipilih" wrapText="true" HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                        <ImageView fx:id="previewGambar" fitWidth="150" fitHeight="120" preserveRatio="true" smooth="true"/>
+                        <Label fx:id="pesanLabel" styleClass="error" wrapText="true"/>
+                        <HBox spacing="10">
+                            <Button text="Simpan Produk" onAction="#simpanProduk" styleClass="button-primary" HBox.hgrow="ALWAYS" maxWidth="Infinity"/>
+                            <Button text="Lihat Daftar Produk" onAction="#keDaftar"/>
+                        </HBox>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>

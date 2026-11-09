@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="kelas.controller.DaftarController" stylesheets="@styles/app.css">
+    <top>
+        <VBox spacing="12" styleClass="header">
+            <Label text="DAFTAR PRODUK TOKO" styleClass="title"/>
+            <Label text="Produk yang sudah ditambahkan" styleClass="subtitle"/>
+            <HBox spacing="10">
+                <TextField fx:id="cariField" promptText="Cari berdasarkan nama produk" onAction="#cari" HBox.hgrow="ALWAYS"/>
+                <Button text="Cari" onAction="#cari" styleClass="button-primary"/>
+                <Button text="Reset" onAction="#resetCari"/>
+                <Button text="+ Tambah Produk" onAction="#tambahProduk" styleClass="button-primary"/>
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="10" styleClass="page">
+            <TableView fx:id="tabel" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="kodeCol" text="Kode Produk" prefWidth="150"/>
+                    <TableColumn fx:id="namaCol" text="Nama Produk" prefWidth="300"/>
+                    <TableColumn fx:id="kategoriCol" text="Kategori" prefWidth="160"/>
+                    <TableColumn fx:id="hargaCol" text="Harga" prefWidth="180"/>
+                </columns>
+            </TableView>
+            <HBox alignment="CENTER_RIGHT">
+                <Button text="Lihat Detail Produk" onAction="#detail" styleClass="button-primary"/>
+            </HBox>
+        </VBox>
+    </center>
+    <bottom><Label fx:id="pesanLabel" wrapText="true" styleClass="status"/></bottom>
+</BorderPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles/app.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kelas.controller.DetailController">
+    <top>
+        <VBox spacing="6" styleClass="header">
+            <Label styleClass="title" text="DAFTAR PRODUK TOKO" />
+            <Label styleClass="subtitle" text="Detail Produk" />
+        </VBox>
+    </top>
+    <center>
+        <VBox alignment="CENTER" styleClass="page">
+            <VBox maxWidth="620" spacing="14" styleClass="card">
+                <Label styleClass="subtitle" text="Informasi Produk Terpilih" />
+                <ImageView fx:id="gambarView" fitHeight="84.0" fitWidth="115.0" preserveRatio="true" smooth="true" />
+                <Label styleClass="muted" text="Kode Produk" /><Label fx:id="kodeLabel" styleClass="value" />
+                <Separator />
+                <Label styleClass="muted" text="Nama Produk" /><Label fx:id="namaLabel" styleClass="value" wrapText="true" />
+                <Separator />
+                <Label styleClass="muted" text="Kategori" /><Label fx:id="kategoriLabel" styleClass="value" />
+                <Separator />
+                <Label styleClass="muted" text="Harga Produk" /><Label fx:id="hargaLabel" styleClass="title" />
+                <Button maxWidth="Infinity" onAction="#kembaliKeDaftar" styleClass="button-primary" text="Kembali ke Daftar Produk" />
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>
